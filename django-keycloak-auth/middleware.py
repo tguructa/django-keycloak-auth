@@ -119,3 +119,5 @@ class KeycloakMiddleware:
 
         # Add to userinfo to the view
         request.userinfo = self.keycloak.userinfo(token)
+        request.userinfo['roles'] = token_roles
+
